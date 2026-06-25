@@ -79,6 +79,13 @@ label, p, span, div, li {
     height: 1px;
     background: linear-gradient(90deg, transparent, #00FFB2, #B400FF, transparent);
 }
+
+
+.hero-title {
+  font-size: 2.0rem !important;
+}
+
+            
 .hero-title {
     font-family: 'Orbitron', monospace;
     font-size: clamp(1.4rem, 5vw, 2.6rem);
@@ -340,6 +347,15 @@ hr {
     top: 50% !important;
     transform: translate(-50%, -50%) !important;
 }
+
+/* Upload button fix */    
+            
+[data-testid="stFileUploader"] button[kind="borderlessIcon"],
+[data-testid="stFileUploader"] .stFileUploader ~ div button,
+[data-testid="stFileUploaderDeleteBtn"] {
+    display: none !important;
+}
+            
 [data-testid="stFileUploaderDropzone"] button:hover {
     background: #00FFB2 !important;
 }
@@ -347,7 +363,23 @@ hr {
     color: #050510 !important;
 }
 </style>
+            
+            
 """, unsafe_allow_html=True)
+
+st.markdown("""
+<script>
+const hideUploadBtn = () => {
+    document.querySelectorAll('[data-testid="stFileUploader"] button').forEach((btn, i) => {
+        if (i > 0) btn.style.display = 'none';
+    });
+};
+const observer = new MutationObserver(hideUploadBtn);
+observer.observe(document.body, { childList: true, subtree: true });
+hideUploadBtn();
+</script>
+""", unsafe_allow_html=True)
+
 
 # ── Hero Header ────────────────────────────────────────────────────────────────
 st.markdown("""
