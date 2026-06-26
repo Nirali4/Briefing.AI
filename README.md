@@ -54,6 +54,12 @@ python -m spacy download en_core_web_sm
 ```bash
 streamlit run app.py
 ```
+
+Or, if .venv is not activated
+```bash
+.venv\Scripts\streamlit.exe run app.py
+```
+
 This will start the local server and open the web app in your browser (usually at `http://localhost:8501`).
 
 ### 2. Run Summarization
