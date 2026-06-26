@@ -2,6 +2,8 @@
 
 Extractive text summarization engine tailored for long, complex terms-of-service and legal documents. Built using classical Natural Language Processing (NLP), Machine Learning graph centrality, and a hyper-minimalist, brutalist Streamlit interface.
 
+📊 **Project Presentation**: [Download PDF Presentation](assets/Briefing.AI_Presentation.pdf) (If the GitHub preview fails, download/view the raw PDF file directly).
+
 ---
 
 ## FEATURES
